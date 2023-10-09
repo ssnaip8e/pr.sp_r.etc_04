@@ -1,0 +1,55 @@
+.sidebar
+  .section.about
+    h4.section__title About the author
+    .about
+      .about__head: img(src='./../../assets/img/author.jpg' alt='post image')
+      .about__body
+        .about__name Kate Willems
+        .about__prof
+        .about__quote.
+          Hi, I'm Sonia. Cooking is the way I express my creative side to the world. Welcome to my Kitchen Corner on…
+      .about__more Continue Reading
+  .section.featured
+    h4.section__title Featured posts
+      .featured__blog
+        .post
+          .post__head: img(src='./../../assets/img/s1.jpg' alt='post image')
+          .post__body
+            .post__label Jeans
+            +postInfo
+        .post
+          .post__head: img(src='./../../assets/img/s2.png' alt='post image')
+          .post__body
+            .post__label City
+            +postInfo
+        .post
+          .post__head: img(src='./../../assets/img/s3.png' alt='post image')
+          .post__body
+            .post__label Photografhy
+            +postInfo
+  .section.categories
+    h4.section__title Categories
+    ul.categories__list
+      li.categories__item: a.categories__link(href="#" data-count='23') Fashion
+      li.categories__item: a.categories__link(href="#" data-count='7') Style & clothes
+      li.categories__item: a.categories__link(href="#" data-count='16') Minimalism
+      li.categories__item: a.categories__link(href="#" data-count='5') Black & White
+      li.categories__item: a.categories__link(href="#" data-count='12') Modern clothes
+  .section.social
+    h4.section__title Social media
+    ul.social__list
+      li.social__item: a.social__link(href="#" data-followers='32k likes'): img(src="./../../assets/svg/facebook2.svg", alt="icon social")
+      li.social__item: a.social__link(href="#" data-followers='814 followers'): img(src="./../../assets/svg/pinterest2.svg", alt="icon social")
+      li.social__item: a.social__link(href="#" data-followers='165 followers'): img(src="./../../assets/svg/vimeo.svg", alt="icon social")
+      li.social__item: a.social__link(href="#" data-followers='6k followers'): img(src="./../../assets/svg/dribbble.svg", alt="icon social")
+      li.social__item: a.social__link(href="#" data-followers='130k followers'): img(src="./../../assets/svg/twitter.svg", alt="icon social")
+      li.social__item: a.social__link(href="#" data-followers='37k followers'): img(src="./../../assets/svg/behance2.svg", alt="icon social")
+      li.social__item: a.social__link(href="#" data-followers='854k followers'): img(src="./../../assets/svg/instagram2.svg", alt="icon social")
+      li.social__item: a.social__link(href="#" data-followers='52k subscribers'): img(src="./../../assets/svg/youtube.svg", alt="icon social")
+      li.social__item: a.social__link(href="#" data-followers='642 followers'): img(src="./../../assets/svg/Group2.svg", alt="icon social")
+  .section.tags
+    h4.section__title Tags
+    ul.tags__list
+      each value in listTags
+        li.tags__item: a.tags__link(href="#") #{value}
+
