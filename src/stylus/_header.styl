@@ -1,6 +1,8 @@
 .header
   min-height: 800px
   max-width: 1920px
+  @media screen and (max-width: 500px)
+    min-height: 500px
 .nav
   position: relative
   display: flex
@@ -10,19 +12,15 @@
   max-width: $containerNav
   margin: 0 auto
   padding: 0 16px
-  &::after
-    content: ""
-    display: block
-    position: absolute
-    bottom: 9px
-    left: 7%
-    height: 1px
-    width: $container
-    background-color: $postShadow
-    opacity: .5
+  @media screen and (max-width: 500px)
+    flex-flow: column
+    min-height: 50px
   &__menu
     display: flex
     gap: 24px
+    @media screen and (max-width: 400px)
+      flex-flow: wrap
+      gap: 8px
   &__link
     font-size: 14px;
     &:hover
@@ -47,14 +45,19 @@
   background-image: url('./../../assets/img/hero.jpg')
   background-repeat: no-repeat
   background-size: cover
+  @media screen and (max-width: 500px)
+    min-height: 400px
   &__container
     position: relative
     max-width: $container
     margin: 0 auto
+    padding: 0 16px
   &__head
     position: relative
     bottom: -500px
     max-width: 560px
+    @media screen and (max-width: 500px)
+      bottom: -100px
   &__label
     font-family: $sans
     font-size: 14px;

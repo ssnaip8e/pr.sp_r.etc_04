@@ -3,32 +3,42 @@
 .container
   display: flex
   justify-content: space-between
+  flex-flow: wrap
+  gap: 16px
   max-width: $container
   margin: 0 auto
+  padding: 0 16px
 .content
   max-width: $containerContent
+  margin: 0 auto
   &__blog-one
     display: flex
     flex-flow: wrap
     gap: 30px
-  &__blog-two
-    max-width: 770px
-    min-height: 561px
-    margin-top: 60px
     margin-bottom: 30px
+    @media screen and (max-width: 800px)
+      flex-flow: column
   &__blog-tree
     display: flex
     flex-flow: wrap
     gap: 30px
+    @media screen and (max-width: 800px)
+      flex-flow: column
 .post
   width: $widthCard
   min-height: $heightCard
   box-shadow: 0 1px 1px $postShadow
+  @media screen and (max-width: 500px)
+    width: 280px
+    height: 100%
   &:hover
     box-shadow: 0 4px 8px $postShadow
   &__head
     width: $widthCardImg
     height: $heightCardImg
+    @media screen and (max-width: 500px)
+      width: 100%
+      height: 100%
   &__body
     padding: 15px 42px
     text-align: center
@@ -54,9 +64,31 @@
       display: inline-block
       margin-right: 4px
       color: $on-bg-variant
+.content__blog-two
+  @media screen and (max-width: 800px)
+    display: none
+  .post
+    width: 770px
+    min-height: 561px
+    margin-top: 60px
+    margin-bottom: 30px
+    .post__head
+      width: 770px
+      height: 349px
+    .post__body
+      text-align: start
+    .post__info
+      justify-content: start
+      margin-bottom: 14px
+    .post__desc
+      max-width: 614px
+      font-family: $sans
+      font-size: 14px
+      line-height: $line-heightText
+      color: $on-bg-variant
 .pagination
   padding: 60px 0 80px
-  width: $widthPagination
+  max-width: $widthPagination
   height: $heightPagination
   margin: 0 auto
   &__list
@@ -67,6 +99,7 @@
     font-size: 14px
     border: 1px solid $surfaceBorder
   &__older
+    text-transform: uppercase
     &::before
       content: "<"
       display: inline-block
@@ -77,6 +110,7 @@
       opacity:  1
       scale: 1.25
   &__next
+    text-transform: uppercase
     &::after
       content: ">"
       display: inline-block
@@ -88,26 +122,59 @@
       scale: 1.25
   &__number
     opacity:  .75
+    @media screen and (max-width: 800px)
+      display: none
     &:hover
       color: $on-bg
       opacity:  1
-      scale: 1.25
+      scale: 1.75
 .sidebar
   display: flex
-  flex-direction: column
-  max-width: $containerSidebar
+  flex-flow: wrap column;
+  gap: 70px;
+  margin: 0 auto
 .section
-  &:not(.about)
-    margin-top: 70px
+  max-width: $containerSidebar
   &__title
     width: 270px
     line-height: 50px
     margin-top: 0
-    margin-bottom: 20px
     font-size: 16px
     font-weight: 400
     text-align: center
     border: 1px solid $surfaceBorder
+.about
+  &__author
+    min-height: 385px
+    box-shadow: 0 1px 1px $postShadow
+    &:hover
+      box-shadow: 0 4px 8px $postShadow
+  &__body
+    padding: 20px
+    text-align: center
+  &__name
+    padding-bottom: 4px
+    font-size: 16px
+    font-weight: bold
+  &__prof
+    font-size: 14px
+    color: $surfaceText
+  &__quote
+    padding-top: 14px
+    margin-bottom: 0
+    font-family: $sans
+    font-size: 14px
+    color: $on-bg-variant
+    line-height: $line-heightText
+  &__more
+    padding: 12px 76px
+    font-size: 12px
+    text-transform: uppercase
+    color: $accent
+    border: 1px solid $surfaceBorder
+  &__more-link
+    &:hover
+      text-decoration: underline
 .featured__blog
   display: flex
   flex-direction: column
@@ -125,7 +192,61 @@
       font-size: 12px
     &__title
       font-size: 18px
-
-
-
+.categories
+  min-height: 280px
+  &__item
+    position: relative
+    padding: 20px 0 15px
+    border-bottom: 1px solid $surfaceBorder
+  &__link
+    &::after
+      content: attr(data-count)
+      position: absolute
+      right: 0
+    &:hover
+      color: $accent
+.social
+  min-height: 340px
+  &__list
+    display: flex
+    flex-flow: wrap
+    gap: 3px
+  &__item
+    position: relative
+  &__link
+    display: block
+    width: 40px
+    padding-top: 17px
+    width: $widthSocialItem
+    height: $heightSocialItem
+    color: $surfaceText
+    background-color: $surface
+    > img
+      padding: 0 34px 0
+    &:hover
+      background-color: $accent
+      color: $on-image
+    &::after
+      content: attr(data-followers)
+      display: block
+      width:40px
+      margin: 8px 20px 16px
+      font-family: $sans
+      font-size: 12px
+      text-align: center
+      color: inherit
+.tags
+  min-height: 220px
+  &__list
+    display: flex
+    flex-flow: wrap
+    gap: 10px
+  &__link
+    padding: $paddingTagLink
+    font-size: 14px
+    color: $on-bg-variant
+    background-color: $surface
+    &:hover
+      color: $on-image
+      background-color: $accent
 
