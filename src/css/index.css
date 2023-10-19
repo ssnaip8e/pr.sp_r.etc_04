@@ -414,7 +414,8 @@ a {
   line-height: 24px;
 }
 .about__more {
-  padding: 12px 76px;
+  text-align: center;
+  padding-block: 12px;
   font-size: 12px;
   text-transform: uppercase;
   color: #c9a96e;
