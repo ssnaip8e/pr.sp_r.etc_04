@@ -1,5 +1,7 @@
 # project.site.fashion-blog
-Лэндинг блога "Fashion blog"
+### Лэндинг блога "Fashion blog"
+
+- media queries
 
 Инструменты:
 - Шаблонизатор PUG
