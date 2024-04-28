@@ -1,4 +1,7 @@
-# project.site.fashion-blog
+# project.single-page(responsive).others(04)
+
+
+
 ### Лэндинг блога "Fashion blog"
 
 - media queries
