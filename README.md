@@ -1,8 +1,6 @@
-# project.single-page(responsive).others(04)
+> project.single-page(responsive).others(04)
 
-
-
-### Лэндинг блога "Fashion blog"
+## Лэндинг блога "Fashion blog"
 
 - media queries
 
