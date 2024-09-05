@@ -1,4 +1,4 @@
-> project.single-page(responsive).others(04)
+> project.single-page(responsive).others
 
 ## Лэндинг блога "Fashion blog"
 
